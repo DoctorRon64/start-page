@@ -1,62 +1,40 @@
-﻿document.addEventListener('DOMContentLoaded', async function () {
-    async function loadJSONResource(url) {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        return await response.json();
-    }
-    
-    function createLinkHTML(link) {
-        return `
-                    <a href="${link.url}" class="link" style="color: ${link.color}" data-hover="${link.hoverText}" data-hover-color="${link.hoverColor}">
-                        ${link.name}
-                    </a>
-                `;
-    }
-
-    function createSectionHTML(section) {
-        const linksHTML = section.links.map(createLinkHTML).join('');
-        return `
-                    <div class="section" style="background-color: ${section.color}">
-                        <h2 class="section-title">${section.section}</h2>
-                        ${linksHTML}
-                    </div>
-                `;
-    }
-
-    async function fetchLinks() {
-        const linksData = await loadJSONResource('links.json');
-        const linksContainer = document.getElementById('links');
-        const sectionsHTML = linksData.map(createSectionHTML).join('');
-        linksContainer.innerHTML = sectionsHTML;
-
-        // Add event listeners for hover colors
-        document.querySelectorAll('.link').forEach(link => {
-            const originalColor = link.style.color;
-            link.addEventListener('mouseover', () => {
-                link.style.color = link.getAttribute('data-hover-color');
+﻿document.addEventListener('DOMContentLoaded', () => {
+    fetch('/json/links.json')
+        .then(response => response.json())
+        .then(data => {
+            let htmlContent = '';
+            data.sections.forEach(section => {
+                htmlContent += `<h2>${section.name}</h2>`;
+                section.links.forEach(link => {
+                    htmlContent += returnHTML(link);
+                });
             });
-            link.addEventListener('mouseout', () => {
-                link.style.color = originalColor;
-            });
+
+            document.getElementById('links').innerHTML = htmlContent;
+        })
+        .catch(error => {
+            console.error('Error fetching the JSON data:', error);
         });
-    }
 
-    fetchLinks();
-
-    // Search functionality
-    document.getElementById('search').addEventListener('input', function () {
-        const searchValue = this.value.toLowerCase();
-        document.querySelectorAll('.section').forEach(section => {
-            let sectionVisible = false;
-            section.querySelectorAll('.link').forEach(link => {
-                if (link.textContent.toLowerCase().includes(searchValue)) {
-                    link.style.display = 'block';
-                    sectionVisible = true;
-                } else {
-                    link.style.display = 'none';
-                }
-            });
-            section.style.display = sectionVisible ? 'block' : 'none';
-        });
+    const searchBar = document.getElementById('search');
+    searchBar.value = '';
+    searchBar.focus();
+    searchBar.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            const query = searchBar.value.trim(); // trim() to remove leading/trailing whitespace
+            if (query) {
+                const searchUrl = `https://duckduckgo.com/?t=h_&q=${encodeURIComponent(query)}`;
+                window.location.href = searchUrl;
+            }
+        }
     });
 });
+
+function returnHTML(link) {
+    return `
+        <a href="${link.url}" title="${link.hovertext}" class="link">
+            <iconify-icon icon="${link.icon}" width="24" height="24" style="transform: translateY(0px);"></iconify-icon>
+            <span>${link.name}</span>
+        </a>
+    `;
+}

@@ -1,28 +1,98 @@
-[
-  {
-    "section": "Search Engines",
-    "color": "#ffcccb",
-    "links": [
-      {
-        "name": "Google",
-        "url": "https://www.google.com",
-        "color": "blue",
-        "hoverColor": "red",
-        "hoverText": "Go to Google"
-      }
-    ]
-  },
-  {
-    "section": "AI Research",
-    "color": "#ccffcc",
-    "links": [
-      {
-        "name": "OpenAI",
-        "url": "https://www.openai.com",
-        "color": "green",
-        "hoverColor": "yellow",
-        "hoverText": "Go to OpenAI"
-      }
-    ]
-  }
-]
+{
+  "sections": [
+    {
+      "name": "Account and Safe",
+      "links": [
+        {
+          "name": "VirusTotal",
+          "icon": "material-symbols:scan",
+          "hovertext": "Check files with VirusTotal",
+          "url": "https://www.virustotal.com/gui/home/upload"
+        },
+        {
+          "name": "URLVoid",
+          "icon": "mdi:magnify-scan",
+          "hovertext": "Scan URLs with URLVoid",
+          "url": "https://www.urlvoid.com/scan/"
+        },
+        {
+          "name": "Emailnator",
+          "icon": "logos:emailnator",
+          "hovertext": "Use Emailnator for temporary email addresses",
+          "url": "https://www.emailnator.com/"
+        },
+        {
+          "name": "Tempail",
+          "icon": "logos:tempail",
+          "hovertext": "Use Tempail for temporary email addresses",
+          "url": "https://tempail.com/"
+        },
+        {
+          "name": "Quackr",
+          "icon": "logos:quackr",
+          "hovertext": "Generate temporary phone numbers with Quackr",
+          "url": "https://quackr.io/temporary-phone-number-generator"
+        },
+        {
+          "name": "PrivacyTools",
+          "icon": "logos:privacytools",
+          "hovertext": "Explore PrivacyTools for online privacy resources",
+          "url": "https://www.privacytools.io/"
+        },
+        {
+          "name": "JustDeleteMe",
+          "icon": "logos:justdeleteme",
+          "hovertext": "Learn how to delete online accounts with JustDeleteMe",
+          "url": "https://backgroundchecks.org/justdeleteme/"
+        },
+        {
+          "name": "Digital Defense",
+          "icon": "logos:digitaldefense",
+          "hovertext": "Explore digital security with Digital Defense",
+          "url": "https://digital-defense.io/"
+        },
+        {
+          "name": "Awesome Privacy",
+          "icon": "logos:awesomeprivacy",
+          "hovertext": "Discover awesome privacy resources",
+          "url": "https://awesome-privacy.xyz/"
+        }
+      ]
+    },
+    {
+      "name": "School",
+      "links": [
+        {
+          "name": "Canvas",
+          "icon": "simple-icons:canvas",
+          "hovertext": "Go to HKU Canvas",
+          "url": "https://hku.instructure.com/"
+        },
+        {
+          "name": "Osiris",
+          "icon": "logos:osiris",
+          "hovertext": "Go to HKU Osiris",
+          "url": "https://hku.osiris-student.nl/"
+        },
+        {
+          "name": "Webmail",
+          "icon": "uiw:mail",
+          "hovertext": "Go to HKU Webmail",
+          "url": "https://webmail.hku.nl/"
+        },
+        {
+          "name": "Campus Print",
+          "icon": "bi:printer",
+          "hovertext": "Go to HKU MyCampusPrint",
+          "url": "https://hku.mycampusprint.nl/"
+        },
+        {
+          "name": "Student Portal",
+          "icon": "logos:studentportal",
+          "hovertext": "Go to HKU Student Portal",
+          "url": "https://studentportal.hku.nl"
+        }
+      ]
+    }
+  ]
+}
