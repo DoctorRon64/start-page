@@ -1,0 +1,28 @@
+[
+  {
+    "section": "Search Engines",
+    "color": "#ffcccb",
+    "links": [
+      {
+        "name": "Google",
+        "url": "https://www.google.com",
+        "color": "blue",
+        "hoverColor": "red",
+        "hoverText": "Go to Google"
+      }
+    ]
+  },
+  {
+    "section": "AI Research",
+    "color": "#ccffcc",
+    "links": [
+      {
+        "name": "OpenAI",
+        "url": "https://www.openai.com",
+        "color": "green",
+        "hoverColor": "yellow",
+        "hoverText": "Go to OpenAI"
+      }
+    ]
+  }
+]
