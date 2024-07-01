@@ -17,43 +17,43 @@
         },
         {
           "name": "Emailnator",
-          "icon": "logos:emailnator",
+          "icon": "mdi:gmail",
           "hovertext": "Use Emailnator for temporary email addresses",
           "url": "https://www.emailnator.com/"
         },
         {
           "name": "Tempail",
-          "icon": "logos:tempail",
+          "icon": "grommet-icons:mail",
           "hovertext": "Use Tempail for temporary email addresses",
           "url": "https://tempail.com/"
         },
         {
           "name": "Quackr",
-          "icon": "logos:quackr",
+          "icon": "wpf:phone",
           "hovertext": "Generate temporary phone numbers with Quackr",
           "url": "https://quackr.io/temporary-phone-number-generator"
         },
         {
-          "name": "PrivacyTools",
-          "icon": "logos:privacytools",
+          "name": "Privacy Tools",
+          "icon": "dashicons:privacy",
           "hovertext": "Explore PrivacyTools for online privacy resources",
           "url": "https://www.privacytools.io/"
         },
         {
-          "name": "JustDeleteMe",
-          "icon": "logos:justdeleteme",
+          "name": "Just Delete Me",
+          "icon": "ant-design:user-delete-outlined",
           "hovertext": "Learn how to delete online accounts with JustDeleteMe",
           "url": "https://backgroundchecks.org/justdeleteme/"
         },
         {
           "name": "Digital Defense",
-          "icon": "logos:digitaldefense",
+          "icon": "fa-solid:shield-alt",
           "hovertext": "Explore digital security with Digital Defense",
           "url": "https://digital-defense.io/"
         },
         {
           "name": "Awesome Privacy",
-          "icon": "logos:awesomeprivacy",
+          "icon": "ant-design:eye-invisible-outlined",
           "hovertext": "Discover awesome privacy resources",
           "url": "https://awesome-privacy.xyz/"
         }
@@ -70,7 +70,7 @@
         },
         {
           "name": "Osiris",
-          "icon": "logos:osiris",
+          "icon": "ri:numbers-fill",
           "hovertext": "Go to HKU Osiris",
           "url": "https://hku.osiris-student.nl/"
         },
@@ -88,10 +88,147 @@
         },
         {
           "name": "Student Portal",
-          "icon": "logos:studentportal",
+          "icon": "ph:student-fill",
           "hovertext": "Go to HKU Student Portal",
           "url": "https://studentportal.hku.nl"
         }
+      ]
+    },
+    {
+      "name": "Game Dev",
+      "links": [
+          {
+            "name": "chatgpt",
+            "icon": "logos:chatgpt",
+            "hovertext": "Go to ChatGPT",
+            "url": "https://www.chatgpt.com"
+          },
+          {
+            "name": "github",
+            "icon": "logos:github",
+            "hovertext": "Go to GitHub",
+            "url": "https://www.github.com"
+          },
+          {
+            "name": "githubstatus",
+            "icon": "logos:github-icon",
+            "hovertext": "GitHub Status",
+            "url": "https://www.githubstatus.com"
+          },
+          {
+            "name": "gitignore",
+            "icon": "logos:git",
+            "hovertext": "Learn about .gitignore",
+            "url": "https://www.gitignore.io"
+          },
+          {
+            "name": "unity docs",
+            "icon": "logos:unity",
+            "hovertext": "Unity Documentation",
+            "url": "https://docs.unity3d.com"
+          },
+          {
+            "name": "opengl learn",
+            "icon": "logos:opengl",
+            "hovertext": "Learn OpenGL",
+            "url": "https://learnopengl.com"
+          },
+          {
+            "name": "trello",
+            "icon": "logos:trello",
+            "hovertext": "Go to Trello",
+            "url": "https://www.trello.com"
+          },
+          {
+            "name": "gameprogrammingpatterns",
+            "icon": "uil:book-open",
+            "hovertext": "Game Programming Patterns",
+            "url": "https://gameprogrammingpatterns.com/contents.html"
+          }
+        ]
+    },
+    {
+      "name": "Social",
+      "links": [
+        {
+          "name": "Twitter",
+          "icon": "logos:twitter",
+          "hovertext": "Go to Twitter",
+          "url": "https://twitter.com/"
+        },
+        {
+          "name": "LinkedIn",
+          "icon": "logos:linkedin",
+          "hovertext": "Go to LinkedIn",
+          "url": "https://linkedin.com/"
+        },
+        {
+          "name": "Duolingo",
+          "icon": "logos:duolingo",
+          "hovertext": "Go to Duolingo",
+          "url": "https://duolingo.com/"
+        },
+        {
+          "name": "Reddit",
+          "icon": "logos:reddit",
+          "hovertext": "Go to Reddit",
+          "url": "https://reddit.com/"
+        },
+        {
+          "name": "Signal",
+          "icon": "logos:signal",
+          "hovertext": "Go to Signal",
+          "url": "https://signal.org/"
+        },
+        {
+          "name": "WhatsApp",
+          "icon": "logos:whatsapp",
+          "hovertext": "Go to WhatsApp",
+          "url": "https://whatsapp.com/"
+        }
+      ]
+    },
+    {
+      "name": "Media",
+      "links": [
+        {
+          "name": "YouTube",
+          "icon": "mdi:youtube",
+          "hovertext": "Watch brainrot youtube videos",
+          "url": "https://youtube.com/"
+        },
+        {
+          "name": "Aniwave",
+          "icon": "bxs:camera-movie",
+          "hovertext": "Watch Anime",
+          "url": "https://aniwave.to/home"
+        },
+        {
+          "name": "MovieKids",
+          "icon": "fluent:movies-and-tv-16-filled",
+          "hovertext": "Watch free movies",
+          "url": "https://www.moviekids.tv/"
+        },
+        {
+          "name": "Disney+",
+          "icon": "cbi:disney-plus",
+          "hovertext": "Disney +",
+          "url": "https://disneyplus.com/"
+        }
+      ]
+    },
+    {
+      "name": "Games",
+      "links": [
+        { "name": "Steam", "icon": "logos:steam", "hovertext": "Go to Steam", "url": "https://store.steampowered.com" },
+        { "name": "Epic Games", "icon": "logos:epicgames", "hovertext": "Go to Epic Games", "url": "https://www.epicgames.com" },
+        { "name": "Battle.net", "icon": "logos:battlenet", "hovertext": "Go to Battle.net", "url": "https://www.battle.net" },
+        { "name": "Fortnite Shop", "icon": "logos:fortnite", "hovertext": "Go to Fortnite Shop", "url": "https://fortnite.gg/shop" },
+        { "name": "HShop", "icon": "logos:hshop", "hovertext": "Go to HShop", "url": "https://hshop.erista.me/c/games" },
+        { "name": "Vimm's Lair", "icon": "logos:vimmslair", "hovertext": "Go to Vimm's Lair", "url": "https://vimm.net/vault" },
+        { "name": "Minecraft Wiki", "icon": "logos:minecraft", "hovertext": "Go to Minecraft Wiki", "url": "https://minecraft.wiki" },
+        { "name": "Vanilla Tweaks", "icon": "logos:vanillatweaks", "hovertext": "Go to Vanilla Tweaks", "url": "https://vanillatweaks.net" },
+        { "name": "Optifine", "icon": "logos:optifine", "hovertext": "Go to Optifine", "url": "https://optifine.net" }
       ]
     }
   ]
