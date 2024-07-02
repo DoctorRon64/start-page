@@ -97,55 +97,61 @@
     {
       "name": "Game Dev",
       "links": [
-          {
-            "name": "chatgpt",
-            "icon": "ri:openai-fill",
-            "hovertext": "Go to ChatGPT",
-            "url": "https://www.chatgpt.com"
-          },
-          {
-            "name": "github",
-            "icon": "mdi:github",
-            "hovertext": "Go to GitHub",
-            "url": "https://www.github.com"
-          },
-          {
-            "name": "githubstatus",
-            "icon": "mingcute:github-fill",
-            "hovertext": "GitHub Status",
-            "url": "https://www.githubstatus.com"
-          },
-          {
-            "name": "gitignore",
-            "icon": "bi:git",
-            "hovertext": "Learn about .gitignore",
-            "url": "https://www.gitignore.io"
-          },
-          {
-            "name": "unity docs",
-            "icon": "bi:unity",
-            "hovertext": "Unity Documentation",
-            "url": "https://docs.unity3d.com"
-          },
-          {
-            "name": "opengl learn",
-            "icon": "file-icons:opengl",
-            "hovertext": "Learn OpenGL",
-            "url": "https://learnopengl.com"
-          },
-          {
-            "name": "trello",
-            "icon": "bi:trello",
-            "hovertext": "Go to Trello",
-            "url": "https://www.trello.com"
-          },
-          {
-            "name": "Design Patterns",
-            "icon": "uil:book-open",
-            "hovertext": "Game Programming Patterns",
-            "url": "https://gameprogrammingpatterns.com/contents.html"
-          }
-        ]
+        {
+          "name": "chatgpt",
+          "icon": "ri:openai-fill",
+          "hovertext": "Go to ChatGPT",
+          "url": "https://www.chatgpt.com"
+        },
+        {
+          "name": "github",
+          "icon": "mdi:github",
+          "hovertext": "Go to GitHub",
+          "url": "https://www.github.com"
+        },
+        {
+          "name": "githubstatus",
+          "icon": "mingcute:github-fill",
+          "hovertext": "GitHub Status",
+          "url": "https://www.githubstatus.com"
+        },
+        {
+          "name": "gitignore",
+          "icon": "bi:git",
+          "hovertext": "Learn about .gitignore",
+          "url": "https://www.gitignore.io"
+        },
+        {
+          "name": "unity docs",
+          "icon": "bi:unity",
+          "hovertext": "Unity Documentation",
+          "url": "https://docs.unity3d.com"
+        },
+        {
+          "name": "opengl learn",
+          "icon": "file-icons:opengl",
+          "hovertext": "Learn OpenGL",
+          "url": "https://learnopengl.com"
+        },
+        {
+          "name": "trello",
+          "icon": "bi:trello",
+          "hovertext": "Go to Trello",
+          "url": "https://www.trello.com"
+        },
+        {
+          "name": "Design Patterns",
+          "icon": "uil:book-open",
+          "hovertext": "Game Programming Patterns",
+          "url": "https://gameprogrammingpatterns.com/contents.html"
+        },
+        {
+          "name": "Stack overflow",
+          "icon": "cib:stackoverflow",
+          "hovertext": "Ask stackoverflow for questions",
+          "url": "https://stackoverflow.com/"
+        }
+      ]
     },
     {
       "name": "Social",
@@ -220,15 +226,60 @@
     {
       "name": "Games",
       "links": [
-        { "name": "Steam", "icon": "bi:steam", "hovertext": "Go to Steam", "url": "https://store.steampowered.com" },
-        { "name": "Epic Games", "icon": "cib:epic-games", "hovertext": "Go to Epic Games", "url": "https://www.epicgames.com" },
-        { "name": "Battle.net", "icon": "simple-icons:battledotnet", "hovertext": "Go to Battle.net", "url": "https://www.battle.net" },
-        { "name": "Fortnite Shop", "icon": "tabler:brand-fortnite", "hovertext": "Go to Fortnite Shop", "url": "https://fortnite.gg/shop" },
-        { "name": "hShop", "icon": "heroicons:shopping-bag-solid", "hovertext": "Go to hShop", "url": "https://hshop.erista.me/c/games" },
-        { "name": "Vimm's Lair", "icon": "teenyicons:vim-solid", "hovertext": "Go to Vimm's Lair", "url": "https://vimm.net/vault" },
-        { "name": "Minecraft Wiki", "icon": "mdi:minecraft", "hovertext": "Go to Minecraft Wiki", "url": "https://minecraft.wiki" },
-        { "name": "Vanilla Tweaks", "icon": "ri:tools-fill", "hovertext": "Go to Vanilla Tweaks", "url": "https://vanillatweaks.net" },
-        { "name": "Optifine", "icon": "icon-park-outline:optimize", "hovertext": "Go to Optifine", "url": "https://optifine.net" }
+        {
+          "name": "Steam",
+          "icon": "bi:steam",
+          "hovertext": "Go to Steam",
+          "url": "https://store.steampowered.com"
+        },
+        {
+          "name": "Epic Games",
+          "icon": "cib:epic-games",
+          "hovertext": "Go to Epic Games",
+          "url": "https://www.epicgames.com"
+        },
+        {
+          "name": "Battle.net",
+          "icon": "simple-icons:battledotnet",
+          "hovertext": "Go to Battle.net",
+          "url": "https://www.battle.net"
+        },
+        {
+          "name": "Fortnite Shop",
+          "icon": "tabler:brand-fortnite",
+          "hovertext": "Go to Fortnite Shop",
+          "url": "https://fortnite.gg/shop"
+        },
+        {
+          "name": "hShop",
+          "icon": "heroicons:shopping-bag-solid",
+          "hovertext": "Go to hShop",
+          "url": "https://hshop.erista.me/c/games"
+        },
+        {
+          "name": "Vimm's Lair",
+          "icon": "teenyicons:vim-solid",
+          "hovertext": "Go to Vimm's Lair",
+          "url": "https://vimm.net/vault"
+        },
+        {
+          "name": "Minecraft Wiki",
+          "icon": "mdi:minecraft",
+          "hovertext": "Go to Minecraft Wiki",
+          "url": "https://minecraft.wiki"
+        },
+        {
+          "name": "Vanilla Tweaks",
+          "icon": "ri:tools-fill",
+          "hovertext": "Go to Vanilla Tweaks",
+          "url": "https://vanillatweaks.net"
+        },
+        {
+          "name": "Optifine",
+          "icon": "icon-park-outline:optimize",
+          "hovertext": "Go to Optifine",
+          "url": "https://optifine.net"
+        }
       ]
     }
   ]

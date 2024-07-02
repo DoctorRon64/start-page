@@ -11,8 +11,25 @@
 <div class="background"></div>
 <div class="container centered">
     <div id="clock" class="clock"></div>
+    <div id="weather-widget" class="weather-widget"></div>
     <div id="links"></div>
-    <input type="text" class="form-control search-bar" id="search" placeholder="Search...">
+    <div class="search-container">
+        <div class="custom-dropdown">
+            <button id="dropdown-button" class="dropdown-button">Search Engine <iconify-icon icon="bx:bx-caret-down"></iconify-icon></button>
+            <div id="dropdown-content" class="dropdown-content">
+                <div class="dropdown-item" data-url="https://duckduckgo.com/?q=">
+                    <iconify-icon icon="logos:duckduckgo"></iconify-icon> DuckDuckGo
+                </div>
+                <div class="dropdown-item" data-url="https://www.google.com/search?q=">
+                    <iconify-icon icon="devicon:google"></iconify-icon> Google
+                </div>
+                <div class="dropdown-item" data-url="https://www.bing.com/search?q=">
+                    <iconify-icon icon="logos:bing"></iconify-icon> Bing
+                </div>
+            </div>
+        </div>
+    </div>
+        <input type="text" class="form-control search-bar" id="search" placeholder="Search...">
 </div>
 </body>
 

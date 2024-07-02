@@ -1,0 +1,42 @@
+﻿/* Links container styling */
+.links-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* Individual link styling */
+.link {
+  color: var(--body-color);
+  font-family: 'Space Mono', monospace;
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, box-shadow 0.3s;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure the #links div expands properly */
+#links {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .links-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}

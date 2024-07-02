@@ -1,16 +1,14 @@
-﻿/* Base styles */
+﻿:root {
+  --main-color: white;
+}
+
+/* Base styles */
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Red Hat Display', sans-serif;
   background: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  position: relative;
   --bs-body-font-size: .8rem;
-  color: white;
+  color: var(--main-color);
 }
 
 /* Background animation */
@@ -19,10 +17,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 140%;
-  background: linear-gradient(45deg, #33a59a, #FF8C00, #FF0080 );
-  background-size: 400% 400%;
+  height: 100%;
+  background: linear-gradient(45deg, #33a59a, #FF8C00, #FF0080);
   animation: gradientAnimation 15s ease infinite;
+  background-size: 400% 400%;
+  color: var(--main-color);
   z-index: -1; /* Place behind other elements */
 }
 
@@ -42,16 +41,14 @@ body {
 .clock {
   top: 50%;
   left: 50%;
-  color: #fff;
   font-size: 90px;
   font-weight: 800;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .quotes {
   width: 100%;
   text-align: center;
-  color: #fff;
   font-size: 20px;
   font-weight: 500;
 }
@@ -90,30 +87,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Search bar styling */
-.search-bar {
-  width: 95%;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 30px;
-  font-family: 'Space Mono', monospace;
-  font-size: 1em;
-  margin-top: 20px;
-  background: rgba(0,0,0,0.2);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s;
-}
-
-.search-bar::placeholder {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.search-bar:focus {
-  box-shadow: 0 6px 12px rgba(0, 0,0, 0.5);
-  outline: none;
-  background: rgba(0, 0, 0, 0.3); /* Ensure background remains the same */
-}
-
 /* Grid layout for sections */
 .sections-container {
   display: grid;
@@ -132,42 +105,6 @@ h2 {
   margin: 8px;
 }
 
-/* Links container styling */
-.links-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-
-/* Individual link styling */
-.link {
-  color: white;
-  font-family: 'Space Mono', monospace;
-  text-decoration: none;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s, box-shadow 0.3s;
-  background: rgba(0,0,0,0.2);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.link:hover {
-  background: rgba(0,0,0,0.3);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-}
-
-/* Ensure the #links div expands properly */
-#links {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 @media (max-width: 768px) {
   body {
     overflow: visible;
@@ -182,36 +119,4 @@ h2 {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-
-  .links-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  .search-bar {
-    width: 90%;
-    font-size: 0.9em;
-    padding: 10px 15px;
-  }
-}
-
-/* Day and Night Theme */
-body.morning {
-  background: linear-gradient(45deg, #FFECB3, #FFD740, #FFC400);
-  color: #333;
-}
-
-body.afternoon {
-  background: linear-gradient(45deg, #FFF59D, #FFEB3B, #FDD835);
-  color: #333;
-}
-
-body.evening {
-  background: linear-gradient(45deg, #FFAB91, #FF7043, #F4511E);
-  color: #fff;
-}
-
-body.night {
-  background: linear-gradient(45deg, #212121, #616161, #9E9E9E);
-  color: #fff;
 }
