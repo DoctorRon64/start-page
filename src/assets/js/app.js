@@ -1,20 +1,13 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
     function updateClock() {
-        const now = new Date();
-        const hours = now.getHours().toString().padStart(2, '0');
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const seconds = now.getSeconds().toString().padStart(2, '0');
-        const timeString = `${hours}:${minutes}:${seconds}`;
-
         const clockElement = document.getElementById('clock');
-        if (clockElement) {
-            clockElement.textContent = timeString;
-        }
+        let date = new Date();
+        clockElement.innerHTML = date.toLocaleTimeString();
     }
+
     updateClock();
     setInterval(updateClock, 1000);
-    
-    
+
     fetch('/json/links.json')
         .then(response => response.json())
         .then(data => {
@@ -51,7 +44,7 @@
 function returnHTML(link) {
     return `
         <a href="${link.url}" title="${link.hovertext}" class="link">
-            <iconify-icon icon="${link.icon}" width="24" height="24" style="transform: translateY(0px); margin: 3px;"></iconify-icon>    
+            <iconify-icon icon="${link.icon}" class="textIcons""></iconify-icon>    
             <span>${link.name}</span>
         </a>
     `;

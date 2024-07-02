@@ -7,7 +7,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   position: relative;
+  --bs-body-font-size: .8rem;
+  color: white;
 }
 
 /* Background animation */
@@ -16,8 +19,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #40E0D0, #FF8C00, #FF0080 );
+  height: 140%;
+  background: linear-gradient(45deg, #33a59a, #FF8C00, #FF0080 );
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   z-index: -1; /* Place behind other elements */
@@ -29,14 +32,34 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+.textIcons {
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  transform: translateY(2px);
+}
+
 .clock {
-  font-size: 2em;
-  color: white;
-  background-color: rgba(0,0,0, 0.9);
-  padding: 10px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-size: 90px;
+  font-weight: 800;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.quotes {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.quotes h2 {
+  font-size: 45px;
+  margin-top: 10px;
+  font-weight: 400;
 }
 
 /* Container styling */
@@ -65,12 +88,11 @@ h2 {
   font-size: 1.5em;
   margin-top: 20px;
   margin-bottom: 10px;
-  color: #333;
 }
 
 /* Search bar styling */
 .search-bar {
-  width: 100%;
+  width: 95%;
   padding: 12px 20px;
   border: none;
   border-radius: 30px;
@@ -78,7 +100,6 @@ h2 {
   font-size: 1em;
   margin-top: 20px;
   background: rgba(0,0,0,0.2);
-  color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
 }
@@ -88,31 +109,27 @@ h2 {
 }
 
 .search-bar:focus {
-  box-shadow: 0 6px 12px rgba(0, 153, 255, 0.5);
+  box-shadow: 0 6px 12px rgba(0, 0,0, 0.5);
   outline: none;
+  background: rgba(0, 0, 0, 0.3); /* Ensure background remains the same */
 }
 
 /* Grid layout for sections */
 .sections-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
   margin-top: 20px;
 }
 
 .section {
+  width: 100%;
   border-radius: 12px;
-  background: rgba(0,0,0,0.2);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   text-align: center;
 }
 
 .section h2 {
   font-family: 'Red Hat Display', sans-serif;
-  font-size: 1.2em;
   margin: 8px;
-  color: white;
 }
 
 /* Links container styling */
@@ -124,17 +141,17 @@ h2 {
 
 /* Individual link styling */
 .link {
+  color: white;
   font-family: 'Space Mono', monospace;
   text-decoration: none;
-  color: #fff;
   padding: 5px;
-  margin: 10px;
+  margin: 5px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.3s, box-shadow 0.3s;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.2);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -149,4 +166,52 @@ h2 {
   max-width: 100%;
   margin: 0 auto;
   padding: 20px;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: visible;
+  }
+
+  .content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .sections-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .links-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .search-bar {
+    width: 90%;
+    font-size: 0.9em;
+    padding: 10px 15px;
+  }
+}
+
+/* Day and Night Theme */
+body.morning {
+  background: linear-gradient(45deg, #FFECB3, #FFD740, #FFC400);
+  color: #333;
+}
+
+body.afternoon {
+  background: linear-gradient(45deg, #FFF59D, #FFEB3B, #FDD835);
+  color: #333;
+}
+
+body.evening {
+  background: linear-gradient(45deg, #FFAB91, #FF7043, #F4511E);
+  color: #fff;
+}
+
+body.night {
+  background: linear-gradient(45deg, #212121, #616161, #9E9E9E);
+  color: #fff;
 }

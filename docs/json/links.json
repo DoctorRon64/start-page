@@ -99,48 +99,48 @@
       "links": [
           {
             "name": "chatgpt",
-            "icon": "logos:chatgpt",
+            "icon": "ri:openai-fill",
             "hovertext": "Go to ChatGPT",
             "url": "https://www.chatgpt.com"
           },
           {
             "name": "github",
-            "icon": "logos:github",
+            "icon": "mdi:github",
             "hovertext": "Go to GitHub",
             "url": "https://www.github.com"
           },
           {
             "name": "githubstatus",
-            "icon": "logos:github-icon",
+            "icon": "mingcute:github-fill",
             "hovertext": "GitHub Status",
             "url": "https://www.githubstatus.com"
           },
           {
             "name": "gitignore",
-            "icon": "logos:git",
+            "icon": "bi:git",
             "hovertext": "Learn about .gitignore",
             "url": "https://www.gitignore.io"
           },
           {
             "name": "unity docs",
-            "icon": "logos:unity",
+            "icon": "bi:unity",
             "hovertext": "Unity Documentation",
             "url": "https://docs.unity3d.com"
           },
           {
             "name": "opengl learn",
-            "icon": "logos:opengl",
+            "icon": "file-icons:opengl",
             "hovertext": "Learn OpenGL",
             "url": "https://learnopengl.com"
           },
           {
             "name": "trello",
-            "icon": "logos:trello",
+            "icon": "bi:trello",
             "hovertext": "Go to Trello",
             "url": "https://www.trello.com"
           },
           {
-            "name": "gameprogrammingpatterns",
+            "name": "Design Patterns",
             "icon": "uil:book-open",
             "hovertext": "Game Programming Patterns",
             "url": "https://gameprogrammingpatterns.com/contents.html"
@@ -152,37 +152,37 @@
       "links": [
         {
           "name": "Twitter",
-          "icon": "logos:twitter",
+          "icon": "prime:twitter",
           "hovertext": "Go to Twitter",
           "url": "https://twitter.com/"
         },
         {
           "name": "LinkedIn",
-          "icon": "logos:linkedin",
+          "icon": "mdi:linkedin",
           "hovertext": "Go to LinkedIn",
           "url": "https://linkedin.com/"
         },
         {
           "name": "Duolingo",
-          "icon": "logos:duolingo",
+          "icon": "simple-icons:duolingo",
           "hovertext": "Go to Duolingo",
           "url": "https://duolingo.com/"
         },
         {
           "name": "Reddit",
-          "icon": "logos:reddit",
+          "icon": "ic:baseline-reddit",
           "hovertext": "Go to Reddit",
           "url": "https://reddit.com/"
         },
         {
           "name": "Signal",
-          "icon": "logos:signal",
+          "icon": "bi:signal",
           "hovertext": "Go to Signal",
           "url": "https://signal.org/"
         },
         {
           "name": "WhatsApp",
-          "icon": "logos:whatsapp",
+          "icon": "bi:whatsapp",
           "hovertext": "Go to WhatsApp",
           "url": "https://whatsapp.com/"
         }
@@ -220,15 +220,15 @@
     {
       "name": "Games",
       "links": [
-        { "name": "Steam", "icon": "logos:steam", "hovertext": "Go to Steam", "url": "https://store.steampowered.com" },
-        { "name": "Epic Games", "icon": "logos:epicgames", "hovertext": "Go to Epic Games", "url": "https://www.epicgames.com" },
-        { "name": "Battle.net", "icon": "logos:battlenet", "hovertext": "Go to Battle.net", "url": "https://www.battle.net" },
-        { "name": "Fortnite Shop", "icon": "logos:fortnite", "hovertext": "Go to Fortnite Shop", "url": "https://fortnite.gg/shop" },
-        { "name": "HShop", "icon": "logos:hshop", "hovertext": "Go to HShop", "url": "https://hshop.erista.me/c/games" },
-        { "name": "Vimm's Lair", "icon": "logos:vimmslair", "hovertext": "Go to Vimm's Lair", "url": "https://vimm.net/vault" },
-        { "name": "Minecraft Wiki", "icon": "logos:minecraft", "hovertext": "Go to Minecraft Wiki", "url": "https://minecraft.wiki" },
-        { "name": "Vanilla Tweaks", "icon": "logos:vanillatweaks", "hovertext": "Go to Vanilla Tweaks", "url": "https://vanillatweaks.net" },
-        { "name": "Optifine", "icon": "logos:optifine", "hovertext": "Go to Optifine", "url": "https://optifine.net" }
+        { "name": "Steam", "icon": "bi:steam", "hovertext": "Go to Steam", "url": "https://store.steampowered.com" },
+        { "name": "Epic Games", "icon": "cib:epic-games", "hovertext": "Go to Epic Games", "url": "https://www.epicgames.com" },
+        { "name": "Battle.net", "icon": "simple-icons:battledotnet", "hovertext": "Go to Battle.net", "url": "https://www.battle.net" },
+        { "name": "Fortnite Shop", "icon": "tabler:brand-fortnite", "hovertext": "Go to Fortnite Shop", "url": "https://fortnite.gg/shop" },
+        { "name": "hShop", "icon": "heroicons:shopping-bag-solid", "hovertext": "Go to hShop", "url": "https://hshop.erista.me/c/games" },
+        { "name": "Vimm's Lair", "icon": "teenyicons:vim-solid", "hovertext": "Go to Vimm's Lair", "url": "https://vimm.net/vault" },
+        { "name": "Minecraft Wiki", "icon": "mdi:minecraft", "hovertext": "Go to Minecraft Wiki", "url": "https://minecraft.wiki" },
+        { "name": "Vanilla Tweaks", "icon": "ri:tools-fill", "hovertext": "Go to Vanilla Tweaks", "url": "https://vanillatweaks.net" },
+        { "name": "Optifine", "icon": "icon-park-outline:optimize", "hovertext": "Go to Optifine", "url": "https://optifine.net" }
       ]
     }
   ]
