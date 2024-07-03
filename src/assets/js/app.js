@@ -99,8 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.dropdown-item').forEach(item => {
         item.addEventListener('click', (event) => {
             selectedSearchEngine = item.getAttribute('data-url');
-            dropdownButton.innerHTML = item.innerHTML + ' ' + '<iconify-icon icon="bx:bx-caret-down"></iconify-icon>';
+            dropdownButton.innerHTML = item.innerHTML + '<iconify-icon icon="uiw:caret-down"></iconify-icon>';
             dropdownContent.style.display = 'none';
+
+            if (selectedSearchEngine === 'https://duckduckgo.com/?q=') {
+                searchBar.placeholder = 'Searching on DuckDuckGo...';
+            } else if (selectedSearchEngine === 'https://www.google.com/search?q=') {
+                searchBar.placeholder = 'Searching on Google...';
+            } else if (selectedSearchEngine === 'https://www.bing.com/search?q=') {
+                searchBar.placeholder = 'Searching on Bing...';
+            }
         });
     });
 
@@ -114,14 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Refocus the search bar when the page is clicked, but not when the search bar is clicked
     document.addEventListener('click', (event) => {
         if (!searchBar.contains(event.target) && !dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
             setTimeout(() => searchBar.focus(), 100);
         }
     });
 
-    // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
         if (!event.target.matches('.dropdown-button')) {
             dropdownContent.style.display = 'none';

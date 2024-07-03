@@ -1,7 +1,7 @@
 ﻿.custom-dropdown {
   position: relative;
   display: inline-block;
-  margin-right: 10px;
+  flex: 1 0 auto;
 }
 
 .dropdown-button {
@@ -25,7 +25,6 @@
   display: none;
   position: absolute;
   background-color: rgba(0,0,0,0.2);
-  min-width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   z-index: 1;
   border-radius: 5px;
@@ -52,7 +51,8 @@
 .search-container {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  width: 100%;
+  gap: 1rem;
 }
 
 .search-bar {
@@ -62,7 +62,6 @@
   border-radius: 30px;
   font-family: 'Space Mono', monospace;
   font-size: 1em;
-  margin-top: 20px;
   background: rgba(0,0,0,0.2);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
