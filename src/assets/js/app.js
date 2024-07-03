@@ -1,70 +1,23 @@
-﻿document.addEventListener('DOMContentLoaded', function() {
-    const apiKey = '1c70c9d071434cc9884212912240207'; // Replace 'YOUR_API_KEY' with your actual WeatherAPI key
-    const weatherWidget = document.getElementById('weather-widget');
-
-    // Function to fetch weather data
-    function fetchWeather(lat, lon) {
-        const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=no`;
-
-        fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                updateWeatherWidget(data);
-            })
-            .catch(error => {
-                weatherWidget.innerHTML = '<p>Error fetching weather data.</p>';
-                console.error('Error fetching the weather data:', error);
-            });
-    }
-
-    // Function to update the weather widget
-    function updateWeatherWidget(data) {
-        const temperature = data.current.temp_c;
-        const condition = data.current.condition.text;
-        const icon = data.current.condition.icon;
-
-        weatherWidget.innerHTML = `
-            <p class="temperature">${temperature}°C</p>
-            <p class="condition">${condition}</p>
-            <img src="${icon}" alt="${condition}">
-        `;
-    }
-
-    // Function to get user's location
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-                fetchWeather(lat, lon);
-            }, error => {
-                weatherWidget.innerHTML = '<p>Unable to retrieve your location.</p>';
-                console.error('Error getting the location:', error);
-            });
-        } else {
-            weatherWidget.innerHTML = '<p>Geolocation is not supported by this browser.</p>';
-        }
-    }
-
-    // Fetch weather data on page load
-    getLocation();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    function updateClock() {
-        const clockElement = document.getElementById('clock');
-        let date = new Date();
-        clockElement.innerHTML = date.toLocaleTimeString();
-    }
-
+﻿document.addEventListener('DOMContentLoaded', () => {
     updateClock();
     setInterval(updateClock, 1000);
 
+    fetchLinks();
+
+    initSearch();
+
+    fetchGitHubRepos();
+
+    fetchWeatherData();
+});
+
+function updateClock() {
+    const clockElement = document.getElementById('clock');
+    let date = new Date();
+    clockElement.innerHTML = date.toLocaleTimeString();
+}
+
+function fetchLinks() {
     fetch('/json/links.json')
         .then(response => response.json())
         .then(data => {
@@ -83,7 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Error fetching the JSON data:', error);
         });
+}
 
+function returnHTML(link) {
+    return `
+        <a href="${link.url}" title="${link.hovertext}" class="link">
+            <iconify-icon icon="${link.icon}" class="textIcons"></iconify-icon>    
+            <span>${link.name}</span>
+        </a>
+    `;
+}
+
+function initSearch() {
     const searchBar = document.getElementById('search');
     const dropdownButton = document.getElementById('dropdown-button');
     const dropdownContent = document.getElementById('dropdown-content');
@@ -133,13 +97,72 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdownContent.style.display = 'none';
         }
     };
-});
+}
 
-function returnHTML(link) {
-    return `
-        <a href="${link.url}" title="${link.hovertext}" class="link">
-            <iconify-icon icon="${link.icon}" class="textIcons"></iconify-icon>    
-            <span>${link.name}</span>
-        </a>
+function fetchGitHubRepos() {
+    fetch('https://api.github.com/users/doctorron64/repos')
+        .then(response => response.json())
+        .then(data => {
+            const githubDropdownElement = document.getElementById('github-dropdown');
+            let htmlContent = '<h2>Latest Repositories</h2>';
+            data.slice(0, 5).forEach(repo => {
+                htmlContent += `
+                    <div class="repo">
+                        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                        <p>${repo.description || 'No description available.'}</p>
+                    </div>
+                `;
+            });
+            githubDropdownElement.innerHTML = htmlContent;
+        })
+        .catch(error => {
+            console.error('Error fetching GitHub data:', error);
+            document.getElementById('github-dropdown').innerHTML = '<p>Error fetching GitHub data.</p>';
+        });
+}
+
+function fetchWeatherData() {
+    const apiKey = '1c70c9d071434cc9884212912240207';
+    const weatherWidget = document.getElementById('weather-widget');
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=no`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    updateWeatherWidget(data);
+                })
+                .catch(error => {
+                    weatherWidget.innerHTML = '<p>Error fetching weather data.</p>';
+                    console.error('Error fetching the weather data:', error);
+                });
+        }, error => {
+            weatherWidget.innerHTML = '<p>Unable to retrieve your location.</p>';
+            console.error('Error getting the location:', error);
+        });
+    } else {
+        weatherWidget.innerHTML = '<p>Geolocation is not supported by this browser.</p>';
+    }
+}
+
+function updateWeatherWidget(data) {
+    const weatherWidget = document.getElementById('weather-widget');
+    const temperature = data.current.temp_c;
+    const condition = data.current.condition.text;
+    const icon = data.current.condition.icon;
+
+    weatherWidget.innerHTML = `
+        <p class="temperature">${temperature}°C</p>
+        <p class="condition">${condition}</p>
+        <img src="${icon}" alt="${condition}">
     `;
 }
