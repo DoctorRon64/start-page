@@ -6,8 +6,6 @@
 
     initSearch();
 
-    fetchGitHubRepos();
-
     fetchWeatherData();
 });
 
@@ -97,28 +95,6 @@ function initSearch() {
             dropdownContent.style.display = 'none';
         }
     };
-}
-
-function fetchGitHubRepos() {
-    fetch('https://api.github.com/users/doctorron64/repos')
-        .then(response => response.json())
-        .then(data => {
-            const githubDropdownElement = document.getElementById('github-dropdown');
-            let htmlContent = '<h2>Latest Repositories</h2>';
-            data.slice(0, 5).forEach(repo => {
-                htmlContent += `
-                    <div class="repo">
-                        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-                        <p>${repo.description || 'No description available.'}</p>
-                    </div>
-                `;
-            });
-            githubDropdownElement.innerHTML = htmlContent;
-        })
-        .catch(error => {
-            console.error('Error fetching GitHub data:', error);
-            document.getElementById('github-dropdown').innerHTML = '<p>Error fetching GitHub data.</p>';
-        });
 }
 
 function fetchWeatherData() {

@@ -9,10 +9,10 @@ import cssnano from 'cssnano';
 import replace from 'gulp-replace';
 import browserSync from 'browser-sync';
 import changed from 'gulp-changed';
-import imagemin, {gifsicle, mozjpeg, optipng, svgo} from 'gulp-imagemin';
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin';
 import pump from 'pump';
 
-const {src, dest, watch, series, parallel} = gulp;
+const { src, dest, watch, series, parallel } = gulp;
 const browser = browserSync.create();
 const sass = gulpSass(dartSass);
 
@@ -21,22 +21,23 @@ const files = {
     jsPath: 'src/assets/js/**/*.js',
     htmlPath: 'src/html/**/*.html',
     imgPath: 'src/assets/img/**/*.{jpg,jpeg,png,svg,gif}',
-    jsonPath: 'src/json/**/*.json'
+    jsonPath: 'src/json/**/*.json',
+    fontPath: 'src/assets/fonts/**/*.{ttf,otf,woff,woff2}'
 };
 
 function scssTask(cb) {
-    return src(files.scssPath, {sourcemaps: true})
-        .pipe(sass({outputStyle: 'compressed', includePaths: ['node_modules']}).on('error', sass.logError))
+    return src(files.scssPath, { sourcemaps: true })
+        .pipe(sass({ outputStyle: 'compressed', includePaths: ['node_modules'] }).on('error', sass.logError))
         .pipe(postcss([autoprefixer()]))
-        .pipe(dest('docs/assets/css/', {sourcemaps: '.'}))
+        .pipe(dest('docs/assets/css/', { sourcemaps: '.' }))
         .on('end', cb);
 }
 
 function jsTask(cb) {
-    return src(files.jsPath, {sourcemaps: true})
+    return src(files.jsPath, { sourcemaps: true })
         .pipe(concat('app.js'))
         .pipe(terser())
-        .pipe(dest('docs/assets/js/', {sourcemaps: '.'}))
+        .pipe(dest('docs/assets/js/', { sourcemaps: '.' }))
         .on('end', cb);
 }
 
@@ -60,7 +61,6 @@ const imageminOptions = {
         })
     ]
 };
-
 
 function imgTask(cb) {
     return new Promise((resolve, reject) => {
@@ -93,10 +93,15 @@ function htmlTask(cb) {
         .on('end', cb);
 }
 
-
 function jsonTask(cb) {
     return src(files.jsonPath)
         .pipe(dest('docs/json/'))
+        .on('end', cb);
+}
+
+function fontTask(cb) {
+    return src(files.fontPath)
+        .pipe(dest('docs/assets/fonts/'))
         .on('end', cb);
 }
 
@@ -133,12 +138,13 @@ function watchTask(cb) {
     watch(files.htmlPath).on('all', gulp.series(htmlTask, cacheBustTask, browserSyncReload));
     watch(files.imgPath).on('all', gulp.series('images', browserSyncReload));
     watch(files.jsonPath).on('all', gulp.series(jsonTask, browserSyncReload));
+    watch(files.fontPath).on('all', gulp.series(fontTask, browserSyncReload));
     watch('docs/**/*.html').on('all', browserSyncReload);
     cb();
 }
 
 export default series(
-    parallel(scssTask, jsTask, htmlTask, 'images', jsonTask),
+    parallel(scssTask, jsTask, htmlTask, 'images', jsonTask, fontTask),
     cacheBustTask,
     browserSyncServe,
     watchTask
